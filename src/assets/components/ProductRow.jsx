@@ -1,7 +1,11 @@
 
-export default function ProductRow(){
+export default function ProductRow({product}){
 
+    // if product
     return (
-        <p>Product Row</p>
+       <tr>
+        <td>{product.name}</td>
+        <td>{product.price}</td>
+       </tr>
     )
 }

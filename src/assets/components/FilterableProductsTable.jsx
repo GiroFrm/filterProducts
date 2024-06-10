@@ -1,7 +1,7 @@
 import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
 
-
+import PRODUCTS from '../utils/products'
 
 
 
@@ -11,7 +11,7 @@ import SearchBar from "./SearchBar";
         <div>
             <p>Filterable products</p>
            <SearchBar/>
-           <ProductTable/>
+           <ProductTable products={PRODUCTS}/>
             </div>
     )
 }

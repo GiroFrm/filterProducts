@@ -1,9 +1,15 @@
 
 
-export default function ProductCategoryRow(){
+export default function ProductCategoryRow({category}){
 
 
     return (
-        <p>Product Category Row</p>
+       
+          <tr>
+            <th colSpan="2">{category}</th>
+          </tr>
+           
+      
+      
     )
 }

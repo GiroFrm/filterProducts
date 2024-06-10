@@ -5,9 +5,22 @@ import ProductRow from "./ProductRow";
 export default function ProductTable({products}){
    
     const rows =[];
-
-    //forEach product add to rows a category and products
+    let lastcategory = null;
     
+    products.forEach(product => {
+    
+        if(product.category!= lastcategory){
+            rows.push(
+                <ProductCategoryRow key={product.category} category={product.category}/>
+            )
+        }
+
+        rows.push(
+            <ProductRow  key={product.name} product={product}/>
+        )
+       lastcategory = product.category; 
+    });
+
     return (
         <>
         <p>Product Table</p>
@@ -22,8 +35,6 @@ export default function ProductTable({products}){
         {rows}
     </tbody>
         </table>
-        <ProductCategoryRow/>
-        <ProductRow/>
         </>
     )
 }
